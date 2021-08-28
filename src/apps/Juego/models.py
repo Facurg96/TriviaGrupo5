@@ -2,7 +2,7 @@ from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
 
-class Usuario(models.Model):
+class UsuarioJuego(models.Model):
 	usuario = models.OneToOneField(User, on_delete=models.CASCADE)
 	puntaje_total = models.DecimalField(verbose_name='Puntaje global obtenido',default=0, decimal_places=2, max_digits=8)
 
@@ -29,7 +29,7 @@ class SeleccionarRespuesta(models.Model):
 
 
 class PreguntasRespondidas(models.Model):
-	usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+	usuario = models.ForeignKey(UsuarioJuego, on_delete=models.CASCADE)
 	pregunta = models.ForeignKey(Pregunta, on_delete=models.CASCADE)
 	respuesta = models.ForeignKey(SeleccionarRespuesta,on_delete=models.CASCADE, related_name='intentos')
 	correcta = models.BooleanField(verbose_name= 'Respuesta correcta', default= False, null= False)
