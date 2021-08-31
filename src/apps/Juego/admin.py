@@ -6,6 +6,7 @@ from .forms import SeleccionarInLineFormset
 
 class SeleccionarRespuestaInLine(admin.TabularInline):
 	model = SeleccionarRespuesta
+	can_delete = False
 	opc_max = SeleccionarRespuesta.max_respuesta
 	opc_min = SeleccionarRespuesta.min_respuesta
 	formset = SeleccionarInLineFormset

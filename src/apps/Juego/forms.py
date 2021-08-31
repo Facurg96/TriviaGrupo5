@@ -14,7 +14,7 @@ class SeleccionarInLineFormset(forms.BaseInlineFormSet):
 				return
 
 			if formulario.cleaned_data and formulario.cleaned_data.get('correcta') is True:
-				respuesta_correcta += 1
+				respuesta_correcta = respuesta_correcta + 1
 
 		try:
 			assert respuesta_correcta == Pregunta.num_opciones_permit

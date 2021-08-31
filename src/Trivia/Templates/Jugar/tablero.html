@@ -1,0 +1,80 @@
+{% extends 'base.html'  %}
+
+{% block contenido %}
+
+<div class="container">
+	<h1 class="text-center my-4">
+		<span class="badge badge-info">
+			Los {{contar_user}} mejores jugadores
+			
+		</span>
+	</h1>
+
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>Posiciones</th>
+				<th>Usuario</th>
+				<th>Puntaje</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			{% for user_juego in usuario_juego %}
+				<tr>
+					<th>{{forloop.counter}} </th>
+					<th>{{user_juego.usuario.username}} </th>
+					<th>{{user_juego.puntaje_total}} </th>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	
+</div>
+
+
+<body>
+<style>
+.boton {
+height:45px;
+width: 120px;
+background-color: #64D448;
+    float:left;
+    margin:0px 5px;
+}
+.boton a {
+text-transform: capitalize;
+font-weight: bold;
+font-family: Tahoma, Geneva, sans-serif;
+line-height:20px;
+color: #FFF;
+text-decoration: none;
+background-image: url(https://tutorialesenlinea.es/images/TL_whatsapp.webp);
+background-repeat: no-repeat;
+background-position: 5px 3px;
+padding-left: 10px;
+display: block;
+}
+.boton a:hover {
+background-color: #48BA2C;
+    color: #FFF;
+}
+</style>
+
+<div class="boton">
+	<a href="https://api.whatsapp.com/send?text=(Tablero del Juego)-(http://127.0.0.1:8000/tablero/)" data-action="share/whatsapp/share"  target="_blank" >Compartir en WhatsApp
+	</a>
+
+<div id="fb-root">
+</div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v11.0" nonce="08NgIPYv"></script>
+
+<div class="fb-share-button" data-href="http://127.0.0.1:8000/tablero/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2Ftablero%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
+
+</div>
+
+
+
+	
+{% endblock contenido %}
+
