@@ -25,14 +25,14 @@ User = get_user_model()
 
 class RegistroForm(UserCreationForm):
 	email = forms.EmailField(required=True)
-	first_name = forms.CharField(required=True)
-	last_name = forms.CharField(required=True)
+	nombre = forms.CharField(required=True)
+	apellido = forms.CharField(required=True)
 
 	class Meta:
 		model = User
 		fields = [
-			'first_name',
-			'last_name',
+			'nombre',
+			'apellido',
 			'username',
 			'email',
 			'password1',

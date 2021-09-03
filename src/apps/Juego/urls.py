@@ -1,4 +1,6 @@
 from django.urls import path 
+from django.conf import settings
+from django.conf.urls.static import static
 from .views import inicio, registro, loginVista, logoutVista, HomeUsuario, resultado_pregunta, Jugar, tablero
 
 urlpatterns = [

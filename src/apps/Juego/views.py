@@ -31,8 +31,7 @@ def registro(request):
 
 	context = {
 
-		'form': form,
-		'titulo': titulo
+		'form': form
 
 	}
 
@@ -106,7 +105,7 @@ def Jugar(request):
 
 
 def tablero(request):
-	total_usuario_juego = UsuarioJuego.objects.order_by('puntaje_total')[:10]
+	total_usuario_juego = UsuarioJuego.objects.order_by('-puntaje_total')
 	contador = total_usuario_juego.count()
 
 	context = {

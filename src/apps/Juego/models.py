@@ -43,7 +43,7 @@ class UsuarioJuego(models.Model):
 		self.puntaje_total = puntaje_actualizado
 		self.save()
 
-		
+
 class Pregunta(models.Model):
 
 	texto = models.TextField(verbose_name='Desarrollo de la pregunta')
@@ -64,14 +64,7 @@ class SeleccionarRespuesta(models.Model):
 	def __str__(self):
 		return self.desarrollo
 
-"""
-class PreguntasRespondidas(models.Model):
-	userJuego = models.ForeignKey(UsuarioJuego, on_delete=models.CASCADE)
-	pregunta = models.ForeignKey(Pregunta, on_delete=models.CASCADE)
-	respuesta = models.ForeignKey(SeleccionarRespuesta,on_delete=models.CASCADE, related_name='intentos')
-	correcta = models.BooleanField(verbose_name= 'Respuesta correcta', default= False, null= False)
-	puntaje = models.DecimalField(verbose_name= 'Puntos obtenidos', default=0, decimal_places=2, max_digits=8)
-"""
+
 
 class PreguntasRespondidas(models.Model):
 	userJuego = models.ForeignKey(UsuarioJuego, on_delete=models.CASCADE, related_name='intentos')
@@ -79,3 +72,4 @@ class PreguntasRespondidas(models.Model):
 	respuesta = models.ForeignKey(SeleccionarRespuesta,on_delete=models.CASCADE, null=True)
 	correcta = models.BooleanField(verbose_name= 'Respuesta correcta', default= False, null= False)
 	puntaje_obtenido = models.DecimalField(verbose_name= 'Puntaje Obtenido', default=0, decimal_places=2, max_digits=8)
+

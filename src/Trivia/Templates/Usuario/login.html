@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
 <form method="POST">
 	{% csrf_token %}
 	
@@ -7,3 +10,5 @@
 			Enviar
 	</button>
 </form>
+	
+{% endblock contenido %}

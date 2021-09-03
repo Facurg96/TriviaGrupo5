@@ -10,6 +10,7 @@ class SeleccionarRespuestaInLine(admin.TabularInline):
 	opc_max = SeleccionarRespuesta.max_respuesta
 	opc_min = SeleccionarRespuesta.min_respuesta
 	formset = SeleccionarInLineFormset
+	verbose_name_plural='Seleccionar respuestas'
 
 class PreguntaAdmin(admin.ModelAdmin):
 	model = Pregunta
@@ -20,7 +21,7 @@ class PreguntaAdmin(admin.ModelAdmin):
 
 class PreguntasRespondidasAdmin(admin.ModelAdmin):
 	list_display = ['pregunta', 'respuesta', 'correcta', 'puntaje']
-
+	
 	class Meta:
 		model = PreguntasRespondidas
 

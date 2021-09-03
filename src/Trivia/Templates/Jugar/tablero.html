@@ -20,6 +20,7 @@
 		</thead>
 
 		<tbody>
+
 			{% for user_juego in usuario_juego %}
 				<tr>
 					<th>{{forloop.counter}} </th>
@@ -32,21 +33,21 @@
 	
 </div>
 
-
+<h3>Compartí tu puesto en el ranking con tus amigos</h3>
 <body>
 <style>
 .boton {
-height:45px;
-width: 120px;
+height:20px;
+width: 250px;
 background-color: #64D448;
     float:left;
-    margin:0px 5px;
+    margin:5px 5px;
 }
 .boton a {
 text-transform: capitalize;
 font-weight: bold;
 font-family: Tahoma, Geneva, sans-serif;
-line-height:20px;
+line-height:15px;
 color: #FFF;
 text-decoration: none;
 background-image: url(https://tutorialesenlinea.es/images/TL_whatsapp.webp);
@@ -62,13 +63,15 @@ background-color: #48BA2C;
 </style>
 
 <div class="boton">
-	<a href="https://api.whatsapp.com/send?text=(Tablero del Juego)-(http://127.0.0.1:8000/tablero/)" data-action="share/whatsapp/share"  target="_blank" >Compartir en WhatsApp
+	<a href="https://api.whatsapp.com/send?text=(Mirá mi posición en el Tablero TriviaChaco )-(http://127.0.0.1:8000/tablero/)" data-action="share/whatsapp/share"  target="_blank" > Compartir en WhatsApp        
 	</a>
 
 <div id="fb-root">
 </div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v11.0" nonce="08NgIPYv"></script>
 
+
+<p><p><p></p></p></p>
 <div class="fb-share-button" data-href="http://127.0.0.1:8000/tablero/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2Ftablero%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>
 
 </div>
